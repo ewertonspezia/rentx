@@ -13,14 +13,14 @@ Technologies used to build the application
 
 ## Screenshots
 
-<div align="center" id="top"> 
-  <img src="./public/images/Home.png" alt="Rentx Home" width="250" />
-  <img src="./public/images/Detalhes.png" alt="Rentx Detalhes" width="250" />
-  <img src="./public/images/Escolher-data.png" alt="Rentx Escolher Data" width="250" />
-  <img src="./public/images/Data-escolhida.png" alt="Rentx Data Escolhida" width="250" />
-  <img src="./public/images/Detalhes-2.png" alt="Rentx Detalhes 2" width="250" />
-  <img src="./public/images/Agendamento-concluido.png" alt="Rentx Agendamento Concluído" width="250" />
-  <img src="./public/images/Agendamentos.png" alt="Rentx Agendamentos" width="250" />
+<div id="top"> 
+  <img src="./public/images/Home.png" alt="Rentx Home" width="250" padding="5" />
+  <img src="./public/images/Detalhes.png" alt="Rentx Detalhes" width="250" padding="5" />
+  <img src="./public/images/Escolher-data.png" alt="Rentx Escolher Data" width="250" padding="5" />
+  <img src="./public/images/Data-escolhida.png" alt="Rentx Data Escolhida" width="250" padding="5" />
+  <img src="./public/images/Detalhes-2.png" alt="Rentx Detalhes 2" width="250" padding="5" />
+  <img src="./public/images/Agendamento-concluido.png" alt="Rentx Agendamento Concluído" width="250" padding="5" />
+  <img src="./public/images/Agendamentos.png" alt="Rentx Agendamentos" width="250" padding="5" />
 </div>
 <br/>
 <br/>
