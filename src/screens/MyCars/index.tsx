@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/core";
-// import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React, { useEffect, useState } from "react";
 import { FlatList, StatusBar } from "react-native";
 import { useTheme } from "styled-components";
@@ -24,7 +23,7 @@ import {
     CarFooterPeriod,
     CarFooterDate
 } from "./styles";
-import { Load } from "../../components/Load";
+import { LoadAnimation } from "../../components/LoadAnimation";
 
 interface CarProps {
     car: CarDTO;
@@ -33,8 +32,6 @@ interface CarProps {
     startDate: string;
     endDate: string;
 }
-
-// type Props = NativeStackScreenProps<any,'MyCars'>;
 
 export function MyCars() {
   const [cars, setCars] = useState<CarProps[]>([]);
@@ -86,7 +83,7 @@ export function MyCars() {
           </Subtitle>
       </Header>
 
-      { loading ? <Load /> :  
+      { loading ? <LoadAnimation /> :  
         <Content>
             <Appointments>
               <AppointmentsTitle>Agendamentos feitos</AppointmentsTitle>

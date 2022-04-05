@@ -10,11 +10,11 @@ export const Container = styled.View`
 `;
 
 export const ImageIndexes = styled.View`
-    flex-direction: row-reverse;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-end;
     padding-right: 24px;
 
-    right: 24px;
+    margin-top: -10px;
 `;
 
 export const ImageIndex = styled.View<ImageIndexProps>`
@@ -22,7 +22,7 @@ export const ImageIndex = styled.View<ImageIndexProps>`
     height: 6px;
 
     background-color: ${({ theme, active }) => 
-        active ? theme.colors.title : theme.colors.shape
+        active ? theme.colors.title : theme.colors.text_detail
     };
 
     margin-left: 8px;
