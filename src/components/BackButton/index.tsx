@@ -1,26 +1,29 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { BorderlessButtonProps } from 'react-native-gesture-handler';
+
+import { useTheme } from 'styled-components';
+
 
 import {
   Container
 } from './styles';
-import { useTheme } from 'styled-components';
 
-interface Props extends BorderlessButtonProps{
-    color?: string;
+interface Props {
+  color?: string;
+  onPress: () => void;
 }
 
-export function BackButton({color, ...rest}: Props){
-    const theme = useTheme()
+export function BackButton({ color, onPress, ...rest }: Props) {
+  const theme = useTheme();
 
   return (
-    <Container>
-        <MaterialIcons 
-            name="chevron-left"
-            size={24}
-            color={color ? color : theme.colors.text}
-        />
+    <Container onPress={onPress}>
+      <MaterialIcons
+        name="chevron-left"
+        size={24}
+        color={color ? color : theme.colors.text}
+      />
     </Container>
-  )
+  );
 }
