@@ -32,20 +32,22 @@ $ https://github.com/ewertonspezia/rentx
 # Axios
 Config axios with your local IP
 
+# Run the API
+clone: https://github.com/ewertonspezia/rentx-api
+
+# Run API
+$ yarn start
+
 # Access
 $ cd rentx
 
 # Install dependencies
 $ yarn
 
-# Run the api
-$ yarn api
-
 # Run the project
-$ expo start
-
-or
-
+# Terminal 1
 $ yarn start
+
+# Terminal 2
 $ yarn android | $ yarn ios
 ```
