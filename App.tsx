@@ -1,6 +1,8 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+import { AppProvider } from './src/hooks';
+
 import {
   useFonts,
   Inter_400Regular,
@@ -12,10 +14,9 @@ import {
   Archivo_600SemiBold
 } from '@expo-google-fonts/archivo';
 
-import theme from './src/styles/theme';
-
 import { Routes } from './src/routes';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import theme from './src/styles/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,17 +25,17 @@ export default function App() {
     Archivo_400Regular,
     Archivo_500Medium,
     Archivo_600SemiBold
-  })
+  });
 
-  if(!fontsLoaded){
+  if (!fontsLoaded) {
     return <AppLoading />
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <AppProvider>
         <Routes />
-      </ThemeProvider>
-    </GestureHandlerRootView>  
+      </AppProvider>
+    </ThemeProvider>
   )
 }

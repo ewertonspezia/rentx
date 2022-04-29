@@ -1,34 +1,39 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
+import { useTheme } from 'styled-components';
+
+import { generateInterval } from './generateInterval';
+import { ptBR } from './localeConfig';
 
 import { 
-  Calendar as CustomCalendar, 
+  Calendar as CustomCalendar,
   LocaleConfig,
-  CalendarProps
+  DateCallbackHandler,  
 } from 'react-native-calendars';
-
-import { useTheme } from 'styled-components';
-import { ptBR } from './localeConfig';
-import { generateInterval } from './generateInterval';
 
 LocaleConfig.locales['pt-br'] = ptBR;
 LocaleConfig.defaultLocale = 'pt-br';
 
-interface MarkedDateProps {
+interface MarkedDateProps{
   [date: string]: {
     color: string;
     textColor: string;
     disabled?: boolean;
     disableTouchEvent?: boolean;
-  }
+  },
 }
 
 interface DayProps {
   dateString: string;
   day: number;
   month: number;
-  year: number;
+  year: number;  
   timestamp: number;
+}
+
+interface CalendarProps {
+  markedDates: MarkedDateProps;
+  onDayPress: DateCallbackHandler;
 }
 
 function Calendar({ markedDates, onDayPress }: CalendarProps){
@@ -37,12 +42,12 @@ function Calendar({ markedDates, onDayPress }: CalendarProps){
   return (
     <CustomCalendar 
       renderArrow={( direction ) => 
-        <Feather 
+        <Feather          
           size={24}
           color={theme.colors.text}
           name={direction == 'left' ? 'chevron-left' : 'chevron-right'}
-        />
-      } 
+        />        
+      }
 
       headerStyle={{
         backgroundColor: theme.colors.background_secondary,
@@ -65,13 +70,12 @@ function Calendar({ markedDates, onDayPress }: CalendarProps){
       }}
 
       firstDay={1}
-      minDate={Date()}
+      minDate={new Date()}
       markingType="period"
       markedDates={markedDates}
       onDayPress={onDayPress}
-
     />
-  )
+  );
 }
 
 export {
